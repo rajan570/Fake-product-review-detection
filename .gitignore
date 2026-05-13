@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Environment variables (NEVER push to GitHub)
+.env
+backend/.env
+frontend/.env
+
+# Python virtual environment
+ml-service/venv/
+ml-service/__pycache__/
+ml-service/*.pyc
+
+# ML Model files (large binary files)
+ml-service/model.pkl
+
+# Build output
+frontend/dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Uploads folder
+backend/uploads/
