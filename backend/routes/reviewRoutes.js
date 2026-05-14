@@ -11,8 +11,8 @@ const {
   getStats
 } = require('../controllers/reviewController');
 
-// Multer config for CSV upload
-const upload = multer({ dest: 'uploads/' });
+// Multer config for CSV upload — use /tmp on Vercel (only writable dir in serverless)
+const upload = multer({ dest: process.env.VERCEL ? '/tmp' : 'uploads/' });
 
 router.post('/', protect, submitReview);
 router.post('/upload', protect, upload.single('file'), uploadCSV);
